@@ -1,0 +1,72 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+
+    <div class="left_section"></div>
+    <div class="right_section">
+      <div class="fab_buttons">
+        <button mat-fab color="primary" class="mat-fab-text mat-fab" (click)="addCustomer()">
+
+          <mat-icon>add</mat-icon> Add Customer
+
+        </button>
+
+      </div>
+    </div>
+    <mat-card>
+      <mat-card-content>
+        <h2>Customers</h2>
+
+        <!-- <div *ngIf="dataSource.data.length === 0" style="padding:50px;">
+          <div style='text-align:center; margin:0 auto; width:50%;'>
+            <mat-spinner color="accent" style='margin:10px auto;'></mat-spinner>
+            Loading Customers
+          </div>
+        </div> -->
+
+        <table mat-table [dataSource]="dataSource" matSort *ngIf="dataSource.data.length > 0">
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="first_name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> First Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.first_name}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="last_name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.last_name}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="city">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> City </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.city}} </mat-cell>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="state">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> State </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.state}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="edit_columns">
+            <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+            <mat-cell *matCellDef="let element" data-label="">
+              <a href="javascript:void(0)" [routerLink]="['edit-customer',element.id]" class="edit_icon">
+                <mat-icon>edit</mat-icon>
+              </a>
+              <a href="javascript:void(0)" (click)="deleteCustomer(element.id)">
+                <mat-icon class="padding-icons">cancel_presentation</mat-icon>
+              </a>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </table>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>

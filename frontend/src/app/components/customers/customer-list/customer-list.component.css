@@ -1,0 +1,37 @@
+table {
+    width: 100%;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+.right_section {
+    height: 43px;
+    width: 100%;
+}
+.left_section {
+    float: left;
+}
+.right_section .mat-fab.mat-fab-text {
+    float: right;
+    top: 44px;
+    /* background-color: #fff!important; */
+    width: auto;
+    padding: 0 12px 0 8px;
+    line-height: 0;
+    border-radius: 50px;
+    height: 40px;
+    color:#FFF;
+    margin-right: 7px;
+    position: absolute;
+    right: 40px;
+    /* bottom: -26px; */
+    z-index: 10;
+}
+.right_section .mat-fab.mat-fab-text .mat-button-wrapper {
+    padding: 0;
+}
+.edit_icon{
+    margin-right: 5px;
+}
