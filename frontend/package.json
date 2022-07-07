@@ -26,7 +26,7 @@
     "rxjs": "^6.5.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "ngx-logger": "^4.0.4",
     "rxjs-compat": "^6.5.3",
     "file-saver": "^2.0.2",
